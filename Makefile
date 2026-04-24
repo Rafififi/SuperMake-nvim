@@ -1,4 +1,6 @@
 
+$(info t $(t))
+
 all:
 	@echo all
 

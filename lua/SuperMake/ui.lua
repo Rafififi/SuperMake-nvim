@@ -1,5 +1,6 @@
 local ui = require("plenary.popup")
 local storage = require("SuperMake.storage")
+local helpers = require("SuperMake.helpers")
 
 local winId
 
@@ -37,7 +38,8 @@ local function OpenMenu()
     local opts = storage.save_content(MakeBuf)
     local userLine = vim.api.nvim_win_get_cursor(winId)[1]
     if opts[userLine] ~= "" then
-      vim.cmd("make -C " .. opts[userLine])
+      local s = helpers.get_choice(opts, userLine)
+      vim.cmd("make -C " .. s)
     end
   end
   local opts = storage.load_content()
