@@ -7,3 +7,10 @@ On first use in a directory, it will auto populate with directories with Makefil
 
 Press `enter` on a target and it will build it
 
+```
+target: file
+    - arg1
+    - -j4
+```
+selecting any part of this will make the target in that file passing in arg1 and -j4
+
